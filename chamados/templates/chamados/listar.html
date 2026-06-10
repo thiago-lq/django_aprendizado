@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chamados</title>
+    </head>
+    <body>
+        <h1>Lista de chamados</h1>
+
+        {% for chamado in chamados %}
+            <div>
+                <h3>{{ chamado.titulo }}</h3>
+                <p>{{ chamado.descricao }}</p>
+                <p>Prioridade: {{ chamado.prioridade }}</p>
+                <p>Prazo: {{ chamado.prazo }}</p>
+                <p>Setor: {{ chamado.setor }}</p>
+            </div>
+            <hr>
+        {% empty %}
+            <p>Nenhum chamado encontrado</p>
+        {% endfor %}
+    </body>
+</html>
