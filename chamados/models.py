@@ -35,9 +35,9 @@ class Chamados(models.Model):
 
     prioridade = models.CharField(
         max_length = 2,
-        choices=Prioridade.choices,
-        default=Prioridade.BAIXA
+        choices = Prioridade.choices,
+        default = Prioridade.BAIXA,
     )
 
-    data_hora= models.DateTimeField(auto_now_add=True)
+    data_hora= models.DateTimeField(auto_now_add = True)
     prazo = models.DateField()
