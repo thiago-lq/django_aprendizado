@@ -12,9 +12,9 @@ class UsuarioForm(forms.ModelForm):
             'setor': 'Setor de trabalho'
         }
 
-        widget = {
+        widgets = {
             'nome': forms.TextInput(attrs = {'class': 'form-input'}),
             'cpf': forms.TextInput(attrs = {'class': 'form-input'}),
-            'email': forms.EmailField(attrs = {'class': 'form-email'}),
+            'email': forms.EmailInput(attrs = {'class': 'form-email'}),
             'setor': forms.Select(attrs = {'class': 'form-select'})
         }

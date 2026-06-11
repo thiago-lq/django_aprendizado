@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Usuario
 from .forms import UsuarioForm
 
+@login_required
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return render(request, 'usuarios/listar.html', {'usuarios': usuarios})
 
+@login_required
 def cadastrar_usuario(request):
-    if request == "POST":
+    if request.method == "POST":
         form = UsuarioForm(request.POST)
         if form.is_valid():
             try:
@@ -27,13 +30,14 @@ def cadastrar_usuario(request):
     
     return render(request, 'usuarios/cadastrar.html', {'form': form})
 
+@login_required
 def editar_usuario(request, pk):
     usuario = get_object_or_404(Usuario, pk = pk)
-    if request == "POST":
+    if request.method == "POST":
         form = UsuarioForm(request.POST, instance = usuario)
         if form.is_valid():
             try:
-                usuario = form.sava(commit=False)
+                usuario = form.save(commit=False)
                 usuario.usuario = request.user
                 usuario.save()
 
@@ -48,6 +52,7 @@ def editar_usuario(request, pk):
     
     return render(request, 'usuarios/editar.html', {'form': form, 'usuario': usuario})
 
+@login_required
 def deletar_usuario(request, pk):
     usuario = get_object_or_404(Usuario, pk = pk)
 
