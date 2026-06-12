@@ -1,0 +1,94 @@
+.background-page {
+    background: linear-gradient(135deg, #d1d5db 0%, #ffffff 50%, #9ca3af 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.modal-overlay {
+    position: fixed; /* fixed -> position: fixed */
+    inset: 0; /* inset-0 -> top/left/bottom/left: 0 */
+}
+
+.modal-wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-painel {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.40);
+}
+
+.modal-title {
+    font-size: 1.125rem;
+    font-weight: 600
+}
+
+.modal-labels {
+    color: #808080;
+    margin-bottom: 0.2rem;
+    font-weight: 200;
+}
+
+.modal-inputs {
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    padding-left: 1rem;
+    border-color: #868686;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.modal-inputs::placeholder {
+    color: #b0b0b0;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.modal-inputs:focus {
+    outline: none;
+    border-color: #868686;
+    box-shadow: 0 0 0 2px rgba(0, 56, 211, 0.1)
+}
+
+.modal-button {
+    width: 50%;
+    background-color: #0038d3;
+    color: #ffffff;
+    padding: 0.7rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-button:hover{
+    background-color: #022891;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 75%;
+}
+
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

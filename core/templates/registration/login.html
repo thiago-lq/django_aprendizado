@@ -1,13 +1,33 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login</title>
+        <link rel="stylesheet" href="{% static 'core/core.css' %}">
     </head>
     <body>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Entrar</button>
-        </form>
+        <div class="modal-overlay background-page">
+            <div class="modal-wrapper">
+                <div class="modal-painel">
+                    <div class="div-center">
+                        <h1 class="modal-title">Sistema de chamados</h1>
+                    </div>
+                    <form method="POST" class="form-login">
+                        <div>
+                            <p class="modal-labels">Digite o seu email</p>
+                            <input type="email" name="email" required class="modal-inputs" placeholder="Digite o seu email"/>
+                        </div>
+                        <div>
+                            <p class="modal-labels">Digite a sua senha</p>
+                            <input type="password" name="senha" required class="modal-inputs" placeholder="Digite a sua senha"/>
+                        </div>
+                        <div class="div-center">
+                            <button type="submit" class="modal-button">Entrar</button>
+                        </div>
+                    </form>
+                </div>      
+            </div>
+        </div>
     </body>
 </html>
