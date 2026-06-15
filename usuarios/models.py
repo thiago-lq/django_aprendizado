@@ -6,7 +6,7 @@ from setores.models import Setor
 class Usuario(AbstractUser):
     nome = models.CharField(max_length=70)
     cpf = models.CharField(max_length=11, unique=True)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     setor = models.ForeignKey(
         Setor,
         on_delete=models.CASCADE

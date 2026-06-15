@@ -14,13 +14,14 @@
                         <h1 class="modal-title">Sistema de chamados</h1>
                     </div>
                     <form method="POST" class="form-login">
+                        {% csrf_token %}
                         <div>
                             <p class="modal-labels">Digite o seu email</p>
-                            <input type="email" name="email" required class="modal-inputs" placeholder="Digite o seu email"/>
+                            <input type="email" name="username" required class="modal-inputs" placeholder="Digite o seu email"/>
                         </div>
                         <div>
                             <p class="modal-labels">Digite a sua senha</p>
-                            <input type="password" name="senha" required class="modal-inputs" placeholder="Digite a sua senha"/>
+                            <input type="password" name="password" required class="modal-inputs" placeholder="Digite a sua senha"/>
                         </div>
                         <div class="div-center">
                             <button type="submit" class="modal-button">Entrar</button>
