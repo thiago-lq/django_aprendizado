@@ -1,22 +1,43 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Chamados</title>
-    </head>
-    <body>
-        <h1>Lista de chamados</h1>
+{% load static %}
 
-        {% for chamado in chamados %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chamados</title>
+    <link rel="stylesheet" href="{% static 'chamados/chamados.css' %}" />
+  </head>
+  <body>
+    <div class="background-page div-overlay">
+      <div class="div-header">
+        <h1 class="title">Chamados</h1>
+        <div class="header-elements">
+            <button class="button">
+                Recarregar
+            </button>
             <div>
-                <h3>{{ chamado.titulo }}</h3>
-                <p>{{ chamado.descricao }}</p>
-                <p>Prioridade: {{ chamado.prioridade }}</p>
-                <p>Prazo: {{ chamado.prazo }}</p>
-                <p>Setor: {{ chamado.setor }}</p>
+                <input type="text">
             </div>
-            <hr>
+        </div>
+        <div>
+            <table>
+
+            </table>
+        </div>
+        {% for chamado in chamados %}
+        <div>
+          <h3>{{ chamado.titulo }}</h3>
+          <p>{{ chamado.descricao }}</p>
+          <p>Prioridade: {{ chamado.prioridade }}</p>
+          <p>Prazo: {{ chamado.prazo }}</p>
+          <p>Setor: {{ chamado.setor }}</p>
+        </div>
+        <hr />
         {% empty %}
-            <p>Nenhum chamado encontrado</p>
+        <p>Nenhum chamado encontrado</p>
         {% endfor %}
-    </body>
+      </div>
+    </div>
+  </body>
 </html>

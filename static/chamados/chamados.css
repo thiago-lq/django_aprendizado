@@ -1,0 +1,40 @@
+.background-page {
+    background: linear-gradient(135deg, #f2f2f2 0%, #ffffff 50%, #f3f3f3 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.div-overlay {
+    inset: 0;
+    position: fixed;
+}
+
+.div-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: between;
+    align-items: start;
+    border-bottom: 1px solid currentColor;
+    gap: 0.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-height: 600;
+    color: #707070;
+}
+
+.header-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: stretch;
+    width: 100%
+}
+
+.button {
+    align-self: flex-start;
+    padding: 0.2rem;
+    border-radius: 1.25rem;
+}
